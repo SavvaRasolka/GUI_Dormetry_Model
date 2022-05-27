@@ -1,0 +1,596 @@
+<MainWindow>:
+    background_color: .92, .83, .67, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        size: root.size
+        orientation: 'vertical'
+        spacing: 2
+        BoxLayout:
+            size_hint: 1, 0.038
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: 0.72, 0.44, 0.31, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text: 'Месяц:'
+                font_size: 18
+                id: month
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: 0.72, 0.44, 0.31, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text: 'Уровень счастья:'
+                font_size: 18
+                id: happiness
+        GridLayout:
+            cols: 5
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 1'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty1
+                        BoxLayout:
+                            id: noise1
+                        BoxLayout:
+                            id: source_noise1
+                        BoxLayout:
+                            id: roach1
+                        BoxLayout:
+                            id: duty1
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student1
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(1)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(1)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 2'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty2
+                        BoxLayout:
+                            id: noise2
+                        BoxLayout:
+                            id: source_noise2
+                        BoxLayout:
+                            id: roach2
+                        BoxLayout:
+                            id: duty2
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student2
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(2)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(2)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 3'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty3
+                        BoxLayout:
+                            id: noise3
+                        BoxLayout:
+                            id: source_noise3
+                        BoxLayout:
+                            id: roach3
+                        BoxLayout:
+                            id: duty3
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student3
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(3)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(3)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 4'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty4
+                        BoxLayout:
+                            id: noise4
+                        BoxLayout:
+                            id: source_noise4
+                        BoxLayout:
+                            id: roach4
+                        BoxLayout:
+                            id: duty4
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student4
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(4)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(4)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 5'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty5
+                        BoxLayout:
+                            id: noise5
+                        BoxLayout:
+                            id: source_noise5
+                        BoxLayout:
+                            id: roach5
+                        BoxLayout:
+                            id: duty5
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student5
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(5)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(5)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 6'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty6
+                        BoxLayout:
+                            id: noise6
+                        BoxLayout:
+                            id: source_noise6
+                        BoxLayout:
+                            id: roach6
+                        BoxLayout:
+                            id: duty6
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student6
+
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(6)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(6)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 7'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty7
+                        BoxLayout:
+                            id: noise7
+                        BoxLayout:
+                            id: source_noise7
+                        BoxLayout:
+                            id: roach7
+                        BoxLayout:
+                            id: duty7
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student7
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(7)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(7)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 8'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty8
+                        BoxLayout:
+                            id: noise8
+                        BoxLayout:
+                            id: source_noise8
+                        BoxLayout:
+                            id: roach8
+                        BoxLayout:
+                            id: duty8
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student8
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(8)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(8)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 9'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty9
+                        BoxLayout:
+                            id: noise9
+                        BoxLayout:
+                            id: source_noise9
+                        BoxLayout:
+                            id: roach9
+                        BoxLayout:
+                            id: duty9
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student9
+
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(9)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(9)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 10'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty10
+                        BoxLayout:
+                            id: noise10
+                        BoxLayout:
+                            id: source_noise10
+                        BoxLayout:
+                            id: roach10
+                        BoxLayout:
+                            id: duty10
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student10
+
+
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(10)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(10)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 11'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty11
+                        BoxLayout:
+                            id: noise11
+                        BoxLayout:
+                            id: source_noise11
+                        BoxLayout:
+                            id: roach11
+                        BoxLayout:
+                            id: duty11
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student11
+
+
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(11)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(11)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 12'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty12
+                        BoxLayout:
+                            id: noise12
+                        BoxLayout:
+                            id: source_noise12
+                        BoxLayout:
+                            id: roach12
+                        BoxLayout:
+                            id: duty12
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student12
+
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(12)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(12)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 13'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty13
+                        BoxLayout:
+                            id: noise13
+                        BoxLayout:
+                            id: source_noise13
+                        BoxLayout:
+                            id: roach13
+                        BoxLayout:
+                            id: duty13
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student13
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(13)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(13)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 14'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty14
+                        BoxLayout:
+                            id: noise14
+                        BoxLayout:
+                            id: source_noise14
+                        BoxLayout:
+                            id: roach14
+                        BoxLayout:
+                            id: duty14
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student14
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(14)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(14)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.15
+                    text: 'Номер комнаты: 15'
+                GridLayout:
+                    cols: 2
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: 0.4, 1
+                        BoxLayout:
+                            Image:
+                                source: "img/dirty.jpg"
+                            Label:
+                                id: dirty15
+                        BoxLayout:
+                            id: noise15
+                        BoxLayout:
+                            id: source_noise15
+                        BoxLayout:
+                            id: roach15
+                        BoxLayout:
+                            id: duty15
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        id: student15
+
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Травить тараканов'
+                    on_press: app.controller.kill_roach(15)
+                Button:
+                    size_hint: 1, 0.15
+                    text: 'Заселить студента'
+                    on_press: app.controller.add_student(15)
+        BoxLayout:
+            size_hint: 1, 0.3
+            Image:
+                source: 'kitchen.png'
+                id: kitchen
+            BoxLayout:
+                Button:
+                    size_hint: 1, 0.5
+                    text: 'Следующий шаг'
+                    on_press: app.controller.show_dorm()
+                Button:
+                    size_hint: 1, 0.5
+                    text: 'Завершить'
+                    on_press: app.controller.save()
+                    on_release: app.stop()
