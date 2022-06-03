@@ -7,8 +7,10 @@ from functools import partial
 
 
 class View:
-    def __init__(self, screen):
+    def __init__(self, screen, model, controller):
         self.screen = screen
+        self.model = model
+        self.controller = controller
         self.month = screen.ids.month
         self.kitchen = screen.ids.kitchen
         self.happiness = screen.ids.happiness
@@ -39,14 +41,15 @@ class View:
         Popup(title='Предупреждение', size_hint=(0.5, 0.5),
               content=Label(text=msg)).open()
 
-    def show_dorm(self, all_rooms, happiness, month, kitchen_state):
+    def show_dorm(self):
         self.clear()
-        self.happiness.text = "Уровень счастья: " + str(int(happiness)) + "/300"
-        self.month.text = "Месяц: " + str(month)
+        self.happiness.text = "Уровень счастья: " + str(int(self.model.our_dorm.calculate_level_of_happiness())) + "/300"
+        self.month.text = "Месяц: " + str(self.model.our_dorm.get_month())
+        list_of_rooms = self.model.our_dorm.get_room_list()
         for x in range(15):
-            room = all_rooms[x]
+            room = list_of_rooms[x]
             self.dirty[x].text = str(room.get_dirty())
-            if kitchen_state:
+            if self.model.our_dorm.define_is_kitchen_okey():
                 self.kitchen.source = 'img/kitchen.png'
             else:
                 self.kitchen.source = 'img/kitchen_dirty.png'
@@ -72,3 +75,20 @@ class View:
                             str(student.get_responsability()) + "\nКоличество выговоров: " +
                             str(student.get_number_of_bans()) + "\nУспеваемость: " +
                             str(student.get_study()))).open()
+
+    def kill_roach(self, room):
+        self.controller.kill_roach(room)
+        self.show_dorm()
+
+    def add_student(self, room):
+        if self.controller.add_student(room):
+            self.show_dorm()
+        else:
+            self.show_popup('В комнате нет места')
+
+    def next_step(self):
+        self.model.update()
+        if self.model.our_dorm.get_month() == 4:
+            self.show_popup("Осторожно! В следующем месяце сессия")
+        self.show_dorm()
+

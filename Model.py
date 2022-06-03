@@ -36,6 +36,7 @@ class Model:
     def add_student(self, number):
         room = self.our_dorm.get_room_by_number(number)
         if room.get_number_of_students() == 2:
-            return -1
+            return False
         else:
             self.our_dorm.check_in(room)
+            return True
